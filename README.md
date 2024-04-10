@@ -8,12 +8,24 @@
 let file = File::open("file.txt")?;
 ```
 
-<tr><td>
+<td>
 
 ```diff
 -No such file or directory (os error 2)
-+Failed to open `file.txt`
-+    caused by: No such file or directory (os error 2)
++file.txt: No such file or directory (os error 2)
+```
+
+<tr><td>
+
+```rs
+remove_dir_all("dist")?;
+```
+
+<td>
+
+```diff
+-Permission denied (os error 13)
++dist/assets/special.txt: Permission denied (os error 13)
 ```
 
 </table>
